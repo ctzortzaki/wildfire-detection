@@ -1,30 +1,32 @@
-Detecting wildfires quickly and accurately is important to help stop them from spreading and causing damage
-to the environment, wildlife, and people. Traditional methods like watching from towers or using satellite
-images can be slow, limited in coverage, or require constant human attention. In contrast, deep learning
-models can automatically look at images from drones, ground cameras, or satellites and detect signs of fire
-or smoke in real time.
+# 🔥 Wildfire Detection from Images using Deep Learning
 
-However, wildfire detection is not easy. Fire and smoke can look very different depending on the light-
-ing, weather, background, and camera quality. For example, a sunset or fog can look like a fire, which can
-confuse the model. This makes it hard for even advanced computer vision systems to always get it right.
-In the past, researchers used simple features like color and edges along with basic machine learning models.
-These worked okay in simple cases. Later, deep learning models like ResNet and EfficientNet performed
-much better. More recently, Vision Transformers (ViTs) have shown strong results by understanding the
-overall image better. Still, many models don’t do well when they are trained on small datasets or when they
-face unfamiliar scenes.
+This project uses deep learning models to detect wildfires from visual images. Our goal is to build accurate and robust fire detection systems that can work in real-world settings with limited data and ambiguous visual cues.
 
-In this project, we test and compare several deep learning models for wildfire detection using a small public
-dataset. Our main contributions are:
+## 📌 Overview
 
-• We compare a ResNet-18 model trained from scratch with one that is pretrained on a larger
-dataset (ImageNet) and fine-tuned for wildfire detection.
+Wildfire detection is crucial for preventing large-scale damage to the environment, human life, and property. In this project, we compare multiple deep learning approaches—including ResNet and Vision Transformers (ViT)—to classify images as either `fire` or `no fire`.
 
-• We also use a Vision Transformer (ViT) model to see how well it can detect fires in complex images.
+Key features:
+- Training models from scratch and fine-tuning pretrained ones.
+- Handling class imbalance through class-weighted loss functions.
+- Synthetic image generation using diffusion models.
+- Real-time data augmentation pipeline for small datasets.
 
-• To deal with the small dataset, we use data augmentation—both common image changes (like
-flipping and color adjustment) and synthetic image generation using a diffusion model to create
-fake fire images.
+## 🗂️ Dataset
 
-Our goal is to find out which models and methods work best for this problem when data is limited and the
-scenes are complex. By improving the training data and using smart model settings, we aim to build better
-systems for detecting wildfires in real-world situations.
+We use [The Wildfire Dataset](https://www.kaggle.com/datasets/elmadafri/the-wildfire-dataset), which contains images labeled as `fire` or `no fire`, split into train, validation, and test sets.
+
+We augment and generate new images to improve training with this limited dataset.
+
+## 🧠 Models Used
+
+- **ResNet-18 (from scratch)**: A basic convolutional neural network trained without any pretraining.
+- **ResNet-18 (pretrained)**: Fine-tuned on our wildfire dataset after pretraining on ImageNet.
+- **Vision Transformer (ViT-base-patch16-224)**: Captures long-range dependencies in images.
+
+## ⚙️ Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/wildfire-detection.git
+   cd wildfire-detection
