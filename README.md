@@ -4,7 +4,7 @@ This project uses deep learning models to detect wildfires from visual images. O
 
 ## 📌 Overview
 
-Wildfire detection is crucial for preventing large-scale damage to the environment, human life, and property. In this project, we compare multiple deep learning approaches—including ResNet and Vision Transformers (ViT)—to classify images as either `fire` or `no fire`.
+Wildfire detection is crucial for preventing large-scale damage to the environment, human life, and property. In this project, we compare multiple deep learning approaches, including ResNet and Vision Transformers (ViT), to classify images as either `fire` or `no fire`.
 
 Key features:
 - Training models from scratch and fine-tuning pretrained ones.
