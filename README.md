@@ -18,7 +18,9 @@ dataset. Our main contributions are:
 
 • We compare a ResNet-18 model trained from scratch with one that is pretrained on a larger
 dataset (ImageNet) and fine-tuned for wildfire detection.
+
 • We also use a Vision Transformer (ViT) model to see how well it can detect fires in complex images.
+
 • To deal with the small dataset, we use data augmentation—both common image changes (like
 flipping and color adjustment) and synthetic image generation using a diffusion model to create
 fake fire images.
