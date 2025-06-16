@@ -148,6 +148,22 @@ def evaluate_model(model, test_loader):
     print("Confusion Matrix:")
     print(confusion_matrix(y_true, y_pred))
 
+
+# Calculate class weights to handle class imbalance
+# - Counts how many samples belong to each class in the training set
+# - Computes inverse frequency for each class to give higher weight to underrepresented class(fire)
+"""from collections import Counter
+counts = Counter(train_data.targets)
+total = sum(counts.values())
+class_weights = [total/counts[i] for i in range(len(class_names))]
+class_weights = torch.tensor(class_weights, device=device, dtype=torch.float)
+
+# === Train from Scratch ===
+print("Training model from scratch...")
+model = build_model_from_scratch().to(device)
+criterion = nn.CrossEntropyLoss(weight=class_weights)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)"""
+
 # === Train from Scratch ===
 print("Training model from scratch...")
 model = build_model_from_scratch().to(device)
